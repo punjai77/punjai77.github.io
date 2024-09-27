@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <link rel="stylesheet" href="api.css">
+    <link href="https://fonts.googleapis.com/css?family=Prompt:300,400,500,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <script src="get.js"></script>
+  <nav class="navbar">
+    <div class="container">
+        <h1 class="logo">My Portfolio</h1>   
+        <ul class="nav-menu">
+            <li><a href="index.html">เกี่ยวกับฉัน</a></li>
+            <li><a href="index.html">ประสบการณ์</a></li>
+            <li><a href="index.html">การศึกษา</a></li>
+            <li><a href="index.html">ผลงาน</a></li>
+            <li><a href="index.html">ติดต่อ</a></li>
+            <li><a href="api.html">API</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+  <section class="api">
+    <div class="container-api">
+      <div class="api-get">
+        <div class="api-get-left">
+          <img class="api-get-img" src="ink/img" alt="">
+        </div>
+        <div class="info-get">
+          <table class="table-sensor" >
+            <tr>
+              <th  class="table-th">Sensor</th>
+              <th  class="table-th">Value</th>
+              <th  class="table-th">Unit</th>
+            </tr>
+            <tr>
+              <td>Timestamp</td>
+              <td class="td-sensor" ><div id="timestamp"></div></td>
+              <td>None</td>
+            </tr>
+            <tr>
+              <td>Temp</td>
+              <td class="td-sensor" ><div id="temperature"></div></td>
+              <td>°C</td>
+            </tr>
+            <tr>
+              <td>Luxsensor</td>
+              <td class="td-sensor" ><div id="luxsensor"></div></td>
+              <td>Lux</td>
+            </tr>
+            <tr>
+              <td>Humidity</td>
+              <td class="td-sensor" ><div id="humidity"></div></td>
+              <td>%RH</td>
+            </tr>
+            <tr>
+              <td>Motion</td>
+              <td class="td-sensor" ><div id="motion"></div></td>
+              <td>-</td>
+            </tr>
+          </table>
+        </div>
+        <div class="api-get-right">
+          <img class="api-get-img" src="ink/img" alt="">
+        </div>
+      </div>
+      <div class="api-post">
+        <form onsubmit="event.preventDefault(); submitData();">
+          <div class="api-post-box-name">
+            <p class="text-titleonbox" >NAME</p>
+            <input class="box-input-text" type="text" id="studentId" required placeholder="Enter StudentID">
+          </div>
+          <div class="api-post-box-id">
+            <p class="text-titleonbox" >ID</p>
+            <input class="box-input-text" type="text" id="studentName" required placeholder="Enter name">
+          </div>
+          <div class="api-post-box-sent">
+            <input class="api-post-box-sent-submit" type="submit" >
+          </div>
+        </div>
+        </form>
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="foot-text">
+      <h2>Stop thinking Start drinking</h2>
+      <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTQ0YnplbTY4YmR1Zms1ZHN2MXM3bm56OGh2bmM0dHQ2eWtpamt5cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lTGLOH7ml3poQ6JoFg/giphy.webp" width="200" height="100">
+    </div>
+  </footer>
+
+  <!-- POST -->
+  <script>
+    async function submitData() {
+        // รับข้อมูลจากฟอร์ม
+        const studentId = document.getElementById("studentId").value;
+        const studentName = document.getElementById("studentName").value;
+
+        // สร้างข้อมูลในรูปแบบ JSON
+        const data = {
+            id: studentId,
+            name: studentName
+        };
+
+        // ส่งข้อมูลไปยัง API โดยใช้ fetch
+        try {
+            const response = await fetch("http://206.189.146.138/api/students", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                alert("รับเรื่องค้าบพี่ใหญ่ ซาย่อสูตรเตี๋ยว!!");
+            } else {
+                alert("การส่งล้มเหลว อย่าซีเล็งเดี๋ยวซู็ลิ่ง!!");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("ส่งไม่ได้ค้าบ!!!");
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUNJAI.com</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Prompt:300,400,500,700&display=swap" rel="stylesheet">
+    <script src="scripts.js" defer>
+        document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    
+    // เลื่อนหน้าเว็บไปยังส่วนต่าง ๆ เมื่อคลิกที่เมนู
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = e.target.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        });    
+    });     
+});
+
+    </script>  
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ส่วนของเมนู -->
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">My Portfolio</h1>   
+            <ul class="nav-menu">
+                <li><a href="#about">เกี่ยวกับฉัน</a></li>
+                <li><a href="#experience">ประสบการณ์</a></li>
+                <li><a href="#education">การศึกษา</a></li>
+                <li><a href="#projects">ผลงาน</a></li>
+                <li><a href="#contact">ติดต่อ</a></li>
+                <li><a href="api.html">API</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ส่วนของเนื้อหา -->
+    <header id="home">
+        <div class="intro">
+            <marquee direction="left"><h2 class="slide-ext" >HELLO, WELCOME TO MY PERSONAL PROFILE WEBSITE.</h2></marquee>
+            <img src="IMG_3921.JPG" class="circle" width="9%" height="9%">
+            <h2>PANYAPHON PATIKHAM</h2>
+            <p>นักศึกษา คณะวิศวกรรมศาสตร์ KMUTNB</p>
+            <a href="#contact" class="btn">ติดต่อฉัน</a>
+        </div>
+    </header>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>เกี่ยวกับฉัน</h2>
+            <p>วันเดือนปีเกิด : 21/9/2544</p>
+            <p>ชื่อภาษาไทย : ปัญญาพนต์ ปะติคำ</p>
+            <p>อายุ : 23ปี</p>           
+            <h2>SKILLS AND ABILITIES</h2>
+            <div class="skills">
+                <div class="skill">
+                    <h3>Team Work</h3>
+                    <div class="progress"><div class="progress-bar" style="width: 99%;"></div></div>
+                    <h3>Basic skills Mechanical</h3>
+                    <div class="progress"><div class="progress-bar" style="width: 80%;"></div></div>
+                    <h3>Basic skills Electrical</h3>
+                    <div class="progress"><div class="progress-bar" style="width: 60%;"></div></div>
+                    <h3>Basic skills SolidWorks</h3>
+                    <div class="progress"><div class="progress-bar" style="width: 90%;"></div></div>
+                    <h3>Lean to deal with change</h3>
+                    <div class="progress"><div class="progress-bar" style="width: 90%;"></div></div>
+                </div>
+                <!-- เพิ่มทักษะเพิ่มเติมตามต้องการ -->
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience-section">
+        <div class="intro">
+            <h2>ประสบการณ์การฝึกงาน</h2>
+            <div class="intro">
+                <a target="_blank" href="https://www.irpc.co.th/"><h3>บริษัท IRPC Public Company Limited</h3></a>
+                <p>Position at work : Maintenance</p>
+                <a target="_blank" href="https://www.fitesa.com/en/"><h3>บริษัท Fitesacnc Company Limited</h3></a>
+                <p>Position at work : Maintenance</p>
+                <a target="_blank" href="http://www.bluetechcontrol.com/"><h3>บริษัท Bluetech Control Company Limited</h3></a>
+                <p>Position at work : Assistant Engineer</p>
+            </div>
+            <!-- เพิ่มประสบการณ์เพิ่มเติมตามต้องการ -->
+        </div>
+    </section>
+
+    <section id="education" class="education-section">
+        <div class="intro">
+            <h2>การศึกษา</h2>
+            <div class="intro">
+                <a target="_blank" href="https://www.kmutnb.ac.th/"><img src="kmutnb.png"></a>
+                <h3>มหาวิทยาลัย เทคโนโลยีพระจอมเกล้าพระนครเหนือ</h3>
+                <h4>กำลังศึกษาปริญญาตรี สาขาเครื่องมือวัดเเละระบบอัตโนมัติ (2022-2024)</h4>
+            </div>
+            <div class="intro">
+                <a target="_blank" href="https://www.irpct.ac.th/"><img src="irpct.png"></a>
+                <h3>วิทยาลัยเทคโนโลยีไออาร์พีซีที</h3>
+                <h4>สำเร็จการศึกษาระดับ ปวช. สาขาไฟฟ้ากำลัง (2017-2020)</h4>
+                <h4>สำเร็จการศึกษาระดับ ปวส. สาขาเเมคคาทรอนิกส์เเละหุ่นยนต์ (2020-2022)</h4>
+            </div>
+            <!-- เพิ่มการศึกษาตามต้องการ -->
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="intro">
+                <h2>ผลงาน</h2>
+                <img src="s1.jpg" width="300" height="200" alt="เเข่งขัน 1">
+                <img src="s4.jpg" width="300" height="200" alt="เเข่งขัน 2">
+                <img src="s2.jpg" width="300" height="200" alt="เเข่งขัน 3">
+                <img src="s5.jpg" width="300" height="200" alt="เเข่งขัน 4">
+                <h3>การเเข่งขันทักษะวิชาชีพ ประเภทวิชาอุตสาหกรรม </h3>
+                <p>เเข่งขันทักษะทางด้านโปรเเกรมPLC</p>
+            </div>
+            <!-- เพิ่มผลงานเพิ่มเติมตามต้องการ -->
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="intro">
+            <h2>ติดต่อฉัน</h2>
+            <div class="box-contact" >
+                <a target="_blank" href="https://www.facebook.com/profile.php?id=100006336608362"><img src="facebook.png"></a>
+                <a target="_blank" href="https://www.instagram.com/punpyp?igsh=MWlndjF0dTdiaDFyYw%3D%3D&utm_source=qr"><img src="instargram.jpg"></a>
+            </div>
+            <h2>ที่อยู่</h2>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10957.255034304757!2d100.49528189750168!3d13.84055906163106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29b0d013359f1%3A0xef89572d421d3583!2z4Lil4Li44Lih4Lie4Li04LiZ4Li1IOC4p-C4tOC4peC4peC5jCDguJnguITguKPguK3guLTguJnguJfguKPguYwgLSDguKPguLTguYDguKfguK3guKPguYzguKfguLTguKc!5e0!3m2!1sth!2sth!4v1727263872494!5m2!1sth!2sth" 
+                width="400" 
+                height="250" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- ส่วนท้ายของเว็บ -->
+    <footer>
+        <p>© 2024 [Panyaphon Patikham]. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
