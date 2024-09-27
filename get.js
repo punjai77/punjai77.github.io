@@ -12,3 +12,4 @@ function updateData() {
 }
 setInterval(updateData, 1000); // เรียกใช้ฟังก์ชัน updateData ทุก 1000 มิลลิวินาที (1 วินาที)
 // 206.189.146.138
+ 
